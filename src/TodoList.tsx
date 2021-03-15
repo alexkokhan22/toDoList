@@ -75,33 +75,33 @@ export function TodoList(props: todoListPropsType) {
                             </div>
                         )
                     })
-                    }
-                    </div>
+                }
+            </div>
 
-                    <div>
-                    <Button
+            <div>
+                <Button
                     color={props.filter === 'all' ? 'secondary' : 'primary'}
                     size={'small'}
                     variant={'contained'}
                     //className={props.filter === 'all' ? 'secondary' : 'primary'}
                     onClick={onAllClickHandler}>
                     All
-                    </Button>
-                    <Button
+                </Button>
+                <Button
                     color={props.filter === 'active' ? 'secondary' : 'primary'}
                     size={'small'}
                     variant={'contained'}
                     onClick={onActiveClickHandler}>
                     Active
-                    </Button>
-                    <Button
+                </Button>
+                <Button
                     color={props.filter === 'completed' ? 'secondary' : 'primary'}
                     size={'small'}
                     variant={'contained'}
                     onClick={onCompletedClickHandler}>
                     Completed
-                    </Button>
-                    </div>
-                    </div>
-                    );
-                }
+                </Button>
+            </div>
+        </div>
+    );
+}
