@@ -7,7 +7,7 @@ export type EditTableSpanType = {
 }
 
 
-function EditTableSpan(props: EditTableSpanType) {
+const EditTableSpan = React.memo( (props: EditTableSpanType) => {
     const [editMode, setEditMode] = useState<boolean>(false)
     const [title, setTitle] = useState(props.title);
 
@@ -28,6 +28,6 @@ function EditTableSpan(props: EditTableSpanType) {
             ? <TextField autoFocus={true} onBlur={offEditMOde} onChange={onChangeHandler} value={title}/>
             : <span  onDoubleClick={onEditMOde}>{props.title}</span>
     )
-}
+})
 
 export default EditTableSpan;

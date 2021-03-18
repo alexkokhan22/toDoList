@@ -27,7 +27,7 @@ function AppWitchRedux() {
     const removeTask = useCallback( (id: string, todoLIstId: string) => {
         const action = removeTaskAC(id, todoLIstId)
         dispatch(action)
-    }, [])
+    }, [dispatch])
 
     const addTasks = useCallback((title: string, todoLIstId: string) => {
         const action = addTaskAC(title, todoLIstId)
@@ -37,33 +37,33 @@ function AppWitchRedux() {
     const changeTaskTitle = useCallback((taskId: string, title: string, todoLIstId: string) => {
             const action = changeTaskTitleAC(taskId, title, todoLIstId)
             dispatch(action)
-        }, [])
-    //меняем чекбокс
+        }, [dispatch])
+
     const changeStatus = useCallback((taskId: string, isDone: boolean, todoLIstId: string) => {
         const action = changeTaskStatusAC(taskId, isDone, todoLIstId)
         dispatch(action)
-    }, [])
+    }, [dispatch])
 
     const changeFilter = useCallback((filter: FilterValuesType, todolistId: string) => {
         const action = changeFilterTodolistAC(todolistId, filter)
         dispatch(action)
 
-    }, [])
+    }, [dispatch])
 
     const removeTl = useCallback((todoLIstId: string) => {
         const action = removeTodolistAC(todoLIstId)
         dispatch(action)
-    }, [])
+    }, [dispatch])
 
     const addNewTodoList = useCallback((title: string) => {
         const action = addTodolistAC(title)
         dispatch(action)
-    }, [])
+    }, [dispatch])
 
     const changeTodoLIstTitle = useCallback((title: string, todoListId: string) => {
         const action = changeTitleTodolistAC(todoListId, title)
         dispatch(action)
-    }, [])
+    }, [dispatch])
 
     return (
         <div className="App">
