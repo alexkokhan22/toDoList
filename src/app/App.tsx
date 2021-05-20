@@ -7,7 +7,7 @@ import {ErrorSnackbar} from '../components/ErrorSnackbar/ErrorSnackbar'
 import {useDispatch, useSelector} from 'react-redux'
 import {AppRootStateType} from './store'
 import {initializedAppTC, logoutTC, RequestStatusType} from './app-reducer'
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route} from "react-router-dom";
 import {Login} from "../features/login/login";
 import { CircularProgress } from '@material-ui/core'
 import { useCallback } from 'react'
@@ -40,7 +40,7 @@ function App({demo = false}: PropsType) {
 
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <div className="App">
                 <ErrorSnackbar/>
                 <AppBar position="static">
@@ -48,19 +48,17 @@ function App({demo = false}: PropsType) {
                         <IconButton edge="start" color="inherit" aria-label="menu">
                             <Menu/>
                         </IconButton>
-                        <Typography variant="h6">
-                            News
-                        </Typography>
+                        <Typography variant="h6"></Typography>
                         {isLogin && <Button color="inherit" onClick={logOutHandler}>Log Out</Button>}
                     </Toolbar>
-                    {status === 'loading' && <LinearProgress/>}
+                    {status === 'loading' && <LinearProgress color="secondary"/>}
                 </AppBar>
                 <Container fixed>
                     <Route exact path={'/'} render={() =>  <TodolistsList demo={demo}/>}/>
                     <Route path={'/login'} render={() => <Login/>} />
                 </Container>
             </div>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
