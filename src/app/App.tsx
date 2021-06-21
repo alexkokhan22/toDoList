@@ -17,8 +17,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import {AppRootStateType} from './store'
 import {initializeAppTC, RequestStatusType} from './app-reducer'
 import {HashRouter, Route} from 'react-router-dom'
-import {Login} from '../features/Login/Login'
-import {logoutTC} from '../features/Login/auth-reducer'
+import {Login} from '../features/login/Login'
+import {logoutTC} from '../features/login/auth-reducer'
 
 type PropsType = {
     demo?: boolean
